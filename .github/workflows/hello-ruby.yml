@@ -1,0 +1,15 @@
+name: Hello Ruby
+on: push
+
+jobs:
+  show:
+    runs-on: ubuntu-latest
+    steps:
+      - name: コード取得
+        uses: actions/checkout@v4
+      - name: Ruby セットアップ
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+      - name: バージョン表示
+        run: ruby -v
