@@ -1,0 +1,8 @@
+name: Hello
+on: push
+
+jobs:
+  say:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "こんにちは GitHub Actions!"
