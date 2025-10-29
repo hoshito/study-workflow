@@ -11,9 +11,8 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3'
+          bundler-cache: true  # Gemfileの依存を自動インストール&キャッシュ
       - name: バージョン表示
         run: ruby -v
-      - name: Minitest インストール
-        run: gem install minitest
       - name: テスト実行（Minitest）
-        run: ruby -Ilib:spec spec/hello_spec.rb
+        run: bundle exec ruby -Ilib:spec spec/hello_spec.rb
