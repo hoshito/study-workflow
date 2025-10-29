@@ -2,7 +2,7 @@ name: Hello Ruby
 on: push
 
 jobs:
-  show:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: コード取得
@@ -11,8 +11,10 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3'
-          bundler-cache: true  # Gemfileの依存を自動インストール&キャッシュ
+          bundler-cache: true
       - name: バージョン表示
         run: ruby -v
+      - name: RuboCop (Lint)
+        run: bundle exec rubocop
       - name: テスト実行（Minitest）
         run: bundle exec ruby -Ilib:spec spec/hello_spec.rb

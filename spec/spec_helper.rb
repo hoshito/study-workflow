@@ -1,2 +1,4 @@
+# frozen_string_literal: true
+
 # Minitest用の設定ファイル
 # 特別な設定が必要な場合はここに記述
